@@ -1,0 +1,11 @@
+services:
+    twio-cairn:
+        build: .
+        container_name: twio-cairn
+        restart: unless-stopped
+        ports:
+            - "5159:8000"
+        volumes:
+            - ./data:/data
+        env_file:
+            - .env
